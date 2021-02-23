@@ -55,12 +55,14 @@ namespace ConcesionarioCutre.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(FormCollection frmobj)
         {
-            Operacion operacion = new Operacion();
-            operacion.IDCOCHE = Convert.ToInt32(frmobj.GetValues("MODELOMARCA").First().ToString());
-            operacion.IDCLIENTE = Convert.ToInt32(frmobj.GetValues("IDCLIENTE").First().ToString());
-            operacion.IDEMPLEADO = Convert.ToInt32(frmobj.GetValues("IDEMPLEADO").First().ToString());
-            operacion.TIPO = frmobj.GetValues("Item1.TIPO").First().ToString();
-            operacion.PRECIO = Convert.ToInt32(frmobj.GetValues("Item1.PRECIO").First().ToString());
+            Operacion operacion = new Operacion
+            {
+                IDCOCHE = Convert.ToInt32(frmobj.GetValues("MODELOMARCA").First().ToString()),
+                IDCLIENTE = Convert.ToInt32(frmobj.GetValues("IDCLIENTE").First().ToString()),
+                IDEMPLEADO = Convert.ToInt32(frmobj.GetValues("IDEMPLEADO").First().ToString()),
+                TIPO = frmobj.GetValues("Item1.TIPO").First().ToString(),
+                PRECIO = Convert.ToInt32(frmobj.GetValues("Item1.PRECIO").First().ToString())
+            };
 
             if (ModelState.IsValid)
             {

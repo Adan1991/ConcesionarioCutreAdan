@@ -17,11 +17,13 @@
     <div class="form-horizontal">
         <h4>Operacion</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <label>MODELO y MARCA:</label>
-            @Html.DropDownList("MODELOMARCA", null, htmlAttributes: new { @class = "form-control" })
 
+        <div class="form-group">
+            <label class="control-label col-md-2">MODELO y MARCA:</label>
+            @*@Html.LabelFor(model => model.Item1.IDEMPLEADO, "IDEMPLEADO", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @Html.DropDownList("MODELOMARCA", null, htmlAttributes: new { @class = "form-control" })
+            </div>
         </div>
 
         <div class="form-group">
